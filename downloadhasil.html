@@ -1,0 +1,85 @@
+<!--h00000-->
+<html>
+	<head>
+		<title>
+			Eviden
+		</title>
+		<style>
+			body{
+				background-color:#007777;
+				color:white;
+				font-family:Verdana;
+			}
+			table{
+				border-collapse:collapse;
+				width: max-content;
+			}
+			table td{
+				border: 2px solid cyan;
+			}
+			table thead{
+				font-weight: bold;
+				background-color:#ffffff77;
+				text-align: center;
+				color:black;
+			}
+			table tbody{
+				color:white;
+			}
+			.imgkecil img{
+				height:33px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3></h3>
+		<button class='simpancsv'>Simpan CSV</button>
+		<table></table>
+		<script>
+//
+var fresize = e=>{
+	var list = e.currentTarget.parentElement.classList//td
+	list.contains('imgkecil')?list.remove('imgkecil'):list.add('imgkecil')
+}
+var download = (data, filename, type)=>{
+	var file = new Blob([data], {type: type});
+	if (window.navigator.msSaveOrOpenBlob) // IE10+
+		window.navigator.msSaveOrOpenBlob(file, filename);
+	else { // Others
+		var a = document.createElement("a"),
+				url = URL.createObjectURL(file);
+		a.href = url;
+		a.download = filename;
+		document.body.appendChild(a);
+		a.click();
+		setTimeout(function() {
+			document.body.removeChild(a);
+			window.URL.revokeObjectURL(url);  
+		}, 0); 
+	}
+}
+setTimeout(()=>{
+	Array.from(document.getElementsByTagName('img')).forEach(aa=>{
+		aa.parentElement.addEventListener('click',fresize)
+		aa.addEventListener('error',e=>aa.parentElement.removeChild(aa))
+		aa.src = aa.src
+	})
+},1111)
+document.getElementsByClassName('simpancsv')[0].addEventListener('click',e=>{
+	download(
+		Array.from(
+			document.
+			getElementsByTagName('tbody')[0].
+			children
+		).map(aa=>
+			Array.
+			from(aa.children).
+			map(dd=>dd.textContent).
+			join(',')
+		).join('\n')
+	,'Eviden.csv')
+})
+//
+		</script>
+	</body>
+</html>

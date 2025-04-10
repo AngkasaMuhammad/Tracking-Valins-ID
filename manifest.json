@@ -1,0 +1,32 @@
+{
+	"name": "Tracking Valins ID v1",
+	"description": "ke web valins",
+	"version": "0.1",
+	"manifest_version": 2,
+	"icons": {
+		"16": "icon.png",
+		"48": "icon.png",
+		"128": "icon.png"
+	},
+	"browser_action":{
+		"default_popup":"popup.html"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": true
+	},
+	"content_scripts": [{
+		"matches": [
+			"http://10.62.165.36/*",
+			"https://emas.telkom.co.id/DAVA/dataValidation/validOrderCapture/servicePoint*",
+			"file:///*/hlmvalintiruan.html*"
+		],
+		"js": [
+			"content.js",
+			"html2canvas.js"
+		],
+		"css": [
+			"content.css"
+		]
+	}]
+}

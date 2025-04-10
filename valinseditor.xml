@@ -1,0 +1,22 @@
+<div class='edi'>
+	<div class='edi-input'>
+		<textarea class='tex' wrap='off'></textarea>
+		<button class='track'>Loading...</button>
+		<button class='reset'>Reset</button>
+	</div>
+	<div class='edi-output'>
+		<table>
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>ODP</td>
+					<td>Foto Valins</td>
+					<td>Foto DAVA</td>
+					<td>Status</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,72 @@
+.edi{
+	border:6px solid blue;
+	background-color:#007777;
+	resize:vertical;
+	overflow:auto;
+	height:134px;
+	white-space: nowrap;
+}
+.edi > *{
+	display: inline-block;
+}
+.edi-input{
+	height:-webkit-fill-available;
+	overflow:auto;
+	width:111px;
+	resize:horizontal;
+	display:flex;
+	flex-direction:column;
+	float:left;
+	position:sticky;
+	top:0;
+}
+.edi-output{
+	overflow-y: auto;
+}
+.edi-output table{
+	border-collapse:collapse;
+	width: max-content;
+}
+.edi-output table td{
+	border: 2px solid cyan;
+}
+.edi-output table thead{
+	font-weight: bold;
+	background-color:#ffffff77;
+	text-align: center;
+}
+.edi-output table tbody{
+	color:white;
+}
+.tex{
+	background-color:#00000088;
+	color:white;
+	resize:none;
+	width:-webkit-fill-available;
+	height:50%;
+	flex:auto;
+}
+.track{
+	width:-webkit-fill-available;
+}
+.imgkecil img{
+	height:33px;
+}
+.findall{
+	font-size:1px;
+}
+.tabeldava th{
+	color:white;
+}
+.mulai,.download{
+	font-size: 16px;
+}
+::-webkit-resizer {
+	background: repeating-linear-gradient(
+		-45deg,
+		#aaaaaa,
+		#aaaaaa 1px,
+		grey 1px,
+		grey 2px
+	);
+}
